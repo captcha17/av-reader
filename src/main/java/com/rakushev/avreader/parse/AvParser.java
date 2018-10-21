@@ -12,7 +12,6 @@ import org.springframework.scheduling.annotation.Scheduled;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
-import java.net.URI;
 import java.time.LocalDateTime;
 
 public class AvParser implements Parser {
@@ -47,9 +46,10 @@ public class AvParser implements Parser {
         Document doc = null;
         try {
             doc = Jsoup.connect(AV_URL).get();
-            logger.info("Checking ADs " + LocalDateTime.now());
+            logger.info("Checking ADs {}", LocalDateTime.now());
             String firstElementSrcUrl = doc.select("div .listing-item-image a img").first().attr("src");
             if (!cache.isMostRecent(firstElementSrcUrl)) {
+                logger.info("New AD has been found {}", AV_URL);
                 cache.updateMostRecent(firstElementSrcUrl);
                 publisher.sendNotification(String.format("New AD was added during 2 minutes. See the top one here: %s", AV_URL));
             }

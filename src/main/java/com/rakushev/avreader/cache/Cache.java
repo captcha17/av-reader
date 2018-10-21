@@ -1,6 +1,10 @@
 package com.rakushev.avreader.cache;
 
-public interface Cache {
-    boolean isMostRecent(String value);
-    void updateMostRecent(String value);
+import java.util.Set;
+
+public interface Cache<T> {
+    void add(T t);
+    void addAll(Set<T> set);
+    void remove(T t);
+    boolean contains(T t);
 }

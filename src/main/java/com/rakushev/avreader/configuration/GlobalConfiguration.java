@@ -1,7 +1,7 @@
 package com.rakushev.avreader.configuration;
 
 import com.rakushev.avreader.cache.Cache;
-import com.rakushev.avreader.cache.InMemorySingleElementCache;
+import com.rakushev.avreader.cache.InMemoryCache;
 import com.rakushev.avreader.parse.AvParser;
 import com.rakushev.avreader.parse.Parser;
 import com.rakushev.avreader.service.Publisher;
@@ -16,7 +16,7 @@ public class GlobalConfiguration {
 
     @Bean
     public Cache cache() {
-        return new InMemorySingleElementCache();
+        return new InMemoryCache();
     }
 
     @Bean

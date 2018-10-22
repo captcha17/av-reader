@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 
 public class AvParser implements Parser {
     private static final Logger logger = LoggerFactory.getLogger(AvParser.class);
-    private static final String AV_URL = "https://cars.av.by/search?brand_id%5B0%5D=6&model_id%5B0%5D=2126&year_from=2009&year_to=&currency=USD&price_from=&price_to=14000&transmission=1&body_id=5&engine_type=1&engine_volume_min=&engine_volume_max=&driving_id=&mileage_min=&mileage_max=200000&region_id=5&city_id=&color_id%5B%5D=4&color_id%5B%5D=40&interior_material=&interior_color=&exchange=&search_time=";
+    private static final String AV_URL = "https://cars.av.by/search?brand_id%5B0%5D=6&model_id%5B0%5D=5810&generation_id%5B0%5D=&year_from=2009&year_to=&currency=USD&price_from=&price_to=14000&transmission=1&body_id=5&engine_type=1&engine_volume_min=&engine_volume_max=&driving_id=&mileage_min=&mileage_max=200000&region_id=5&city_id=&color_id%5B%5D=4&color_id%5B%5D=40&interior_material=&interior_color=&exchange=&search_time=";
 
     private Cache<String> cache;
     private Publisher publisher;
